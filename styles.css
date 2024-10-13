@@ -35,8 +35,9 @@ body{
 }
 #message {
     margin-top: 100px; /* Espacio entre el encabezado y el mensaje */
-    background-color: #e0f7fa; /* Color de fondo suave */
-    border: 2px solid #007bff; /* Borde azul */
+    background-color: #e0f7fa; 
+    border: 2px solid #007bff;  
+
     border-radius: 5px; /* Bordes redondeados */
     /*font-weight: bold;*/ /* Negrita para resaltar el mensaje */
     font-size: 30px;
