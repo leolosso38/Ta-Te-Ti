@@ -65,6 +65,7 @@ function checkeoGanador() {
     if (!board.includes('')) {
         gameOver = true;
         messageElement.textContent = 'Empate!';
+        winO.innerHTML = contadorO;
     }
 }
 
