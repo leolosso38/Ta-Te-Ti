@@ -5,6 +5,10 @@ const resetButton = document.getElementById('reset');
 let board = ['', '', '', '', '', '', '', '', ''];
 let jugadorActual = 'X';
 let gameOver = false;
+let contadorX = 0;
+let contadorO = 0;
+const winX = document.getElementById('winX');
+const winO = document.getElementById('winO');
 
 const combinacionganadora = [
     //filas
@@ -18,7 +22,7 @@ const combinacionganadora = [
     //diagonales
     [0, 4, 8],
     [2, 4, 6]
-];
+];// Este array busco todas las combinaciones ganadoras
 
 cells.forEach(cell => {
     cell.addEventListener('click', handleCellClick);
@@ -42,7 +46,17 @@ function checkeoGanador() {
         const [a, b, c] = combinacion;
         if (board[a] && board[a] === board[b] && board[a] === board[c]) {
             gameOver = true;
-            messageElement.textContent = `Jugador ${board[b]} Gana!`;
+            ganador=board[a]
+            messageElement.textContent = `Jugador ${ganador} Gana!`;
+
+            if (ganador === 'X') {
+                contadorX++;  // Incrementa el contador para X
+                winX.innerHTML = contadorX;;
+            } else if (ganador === 'O') {
+                contadorO++;  // Incrementa el contador para O
+                winO.innerHTML = contadorO;
+            }
+
             resaltoGanador(combinacion); // Resalto las celdas ganadoras
             return;
         }
